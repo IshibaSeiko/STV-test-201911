@@ -24,13 +24,24 @@ class ChannelListViewController: UIViewController {
         navigationController?.navigationItem.title = navigationTitle
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        let swipe:UISwipeGestureRecognizer
+        swipe = UISwipeGestureRecognizer()
+        swipe.direction = .down
+        swipe.numberOfTouchesRequired = 1
+        swipe.addTarget(self, action: #selector(self.popVC))
+        self.view.addGestureRecognizer(swipe)
+        
         channelListTable.delegate = self
         channelListTable.dataSource = self
-        
         channelListTable.reloadData()
     }
 }
 
+extension ChannelListViewController {
+    @objc func popVC() {
+        navigationController?.popViewController(animated: true)
+    }
+}
 
 extension ChannelListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -43,7 +54,7 @@ extension ChannelListViewController: UITableViewDelegate {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
-            print("このリンクは開けないよ")
+            print("Cannot open URL")
         }
     }
 }

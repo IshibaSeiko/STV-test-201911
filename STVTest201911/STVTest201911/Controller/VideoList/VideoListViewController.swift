@@ -19,29 +19,44 @@ class VideoListViewController: UIViewController {
     
     var videoListDBData: [VideoListData] = []
     
+    var activityIndicatorView = UIActivityIndicatorView()
+    var start: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reloadListData()
         self.setUp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-        navigationController?.navigationItem.title = "Youtube Viewer"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        super.viewWillAppear(animated)
+        indicatorOFF()
     }
     
     func setUp() {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        let apiClient = APIClient()
-        apiClient.fetchVideoList(endPoint: movieListEndPoint) { (result) in
-            switch result {
-            case .success(let data):
-                self.decodeMovieList(data: data)
-            case .failure(let error):
-                print(error)
+        activityIndicatorView.center = view.center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .purple
+        
+        view.addSubview(activityIndicatorView)
+        if Network.isOnline() {
+            indicatorON()
+            let apiClient = APIClient()
+            apiClient.fetchVideoList(endPoint: movieListEndPoint) { (result) in
+                
+                switch result {
+                case .success(let data):
+                    self.decodeMovieList(data: data)
+                case .failure(let error):
+                    print(error)
+                }
+                
+                self.indicatorOFF()
             }
+        } else {
+            print("isOffline")
         }
         
         videoListTableView.delegate = self
@@ -77,6 +92,19 @@ extension VideoListViewController {
     }
 }
 
+extension VideoListViewController {
+    func indicatorON(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.activityIndicatorView.startAnimating()
+        }
+    }
+    
+    func indicatorOFF() {
+        DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
+        }
+    }
+}
 
 extension VideoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -85,14 +113,20 @@ extension VideoListViewController: UITableViewDelegate {
             return
         }
         
-        let apiClient = ChannelListAPIClient()
-        apiClient.fetchChannelList(endPoint: channelListEndPoint, parameter: videoListDBData[indexPath.row].id) { (result) in
-            switch result  {
-            case .success(let data):
-                self.decodeChannelList(data: data)
-            case .failure(let error):
-                print(error)
+        if Network.isOnline() {
+            indicatorON()
+            let apiClient = ChannelListAPIClient()
+            apiClient.fetchChannelList(endPoint: channelListEndPoint, parameter: videoListDBData[indexPath.row].id) { (result) in
+                switch result  {
+                case .success(let data):
+                    self.decodeChannelList(data: data)
+                case .failure(let error):
+                    print(error)
+                }
+                self.indicatorOFF()
             }
+        } else {
+            print("isOffline")
         }
         
         let storyboard: UIStoryboard = UIStoryboard(name: "ChannelListViewController", bundle: nil)
@@ -102,6 +136,7 @@ extension VideoListViewController: UITableViewDelegate {
         vc.channelListDBData = Array(channelList.findAll())
         vc.navigationTitle = videoListDBData[indexPath.row].name
         self.navigationController?.pushViewController(vc, animated: true)
+        indicatorOFF()
     }
 }
 

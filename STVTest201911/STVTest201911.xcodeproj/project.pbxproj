@@ -34,6 +34,9 @@
 		887DEAE72388D07300B422F2 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAE62388D07300B422F2 /* ChannelListViewController.swift */; };
 		887DEAEB2388D0DF00B422F2 /* ChannelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAE92388D0DF00B422F2 /* ChannelListTableViewCell.swift */; };
 		887DEAEC2388D0DF00B422F2 /* ChannelListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */; };
+		887DEAEE238902C000B422F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAED238902BF00B422F2 /* Localizable.strings */; };
+		887DEAF023890C5500B422F2 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DEAEF23890C5400B422F2 /* Reachability.framework */; };
+		887DEAF62389172100B422F2 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAF52389172100B422F2 /* NetWork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		887DEAE62388D07300B422F2 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		887DEAE92388D0DF00B422F2 /* ChannelListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListTableViewCell.swift; sourceTree = "<group>"; };
 		887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelListTableViewCell.xib; sourceTree = "<group>"; };
+		887DEAED238902BF00B422F2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		887DEAEF23890C5400B422F2 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		887DEAF52389172100B422F2 /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887DEAF023890C5500B422F2 /* Reachability.framework in Frameworks */,
 				887DEABE2388BEE300B422F2 /* Alamofire.framework in Frameworks */,
 				887DEABC2388BED800B422F2 /* Realm.framework in Frameworks */,
 				887DEABA2388BEC500B422F2 /* RealmSwift.framework in Frameworks */,
@@ -144,8 +151,9 @@
 			children = (
 				887DEACC2388C24600B422F2 /* Controller */,
 				887DEACA2388C22400B422F2 /* Model */,
-				887DEAC62388C19200B422F2 /* Dictionary+JSON.swift */,
-				887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */,
+				887DEAF7238917B700B422F2 /* Extensions */,
+				887DEAED238902BF00B422F2 /* Localizable.strings */,
+				887DEAF52389172100B422F2 /* NetWork.swift */,
 				887DEA872388BBF900B422F2 /* AppDelegate.swift */,
 				887DEA8E2388BBFA00B422F2 /* Assets.xcassets */,
 				887DEA902388BBFA00B422F2 /* LaunchScreen.storyboard */,
@@ -175,6 +183,7 @@
 		887DEAB62388BEB500B422F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				887DEAEF23890C5400B422F2 /* Reachability.framework */,
 				887DEABD2388BEE300B422F2 /* Alamofire.framework */,
 				887DEABB2388BED800B422F2 /* Realm.framework */,
 				887DEAB92388BEC500B422F2 /* RealmSwift.framework */,
@@ -259,6 +268,15 @@
 				887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */,
 			);
 			path = ChannelListTableCell;
+			sourceTree = "<group>";
+		};
+		887DEAF7238917B700B422F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAC62388C19200B422F2 /* Dictionary+JSON.swift */,
+				887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +389,7 @@
 				887DEAD32388C71E00B422F2 /* VideoListTableViewCell.xib in Resources */,
 				887DEAE52388D01B00B422F2 /* ChannelListViewController.storyboard in Resources */,
 				887DEAD92388CB2D00B422F2 /* NoVideoTableViewCell.xib in Resources */,
+				887DEAEE238902C000B422F2 /* Localizable.strings in Resources */,
 				887DEAC02388BF5800B422F2 /* VideoListViewController.storyboard in Resources */,
 				887DEAEC2388D0DF00B422F2 /* ChannelListTableViewCell.xib in Resources */,
 			);
@@ -406,6 +425,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -436,6 +456,7 @@
 				887DEADB2388CED300B422F2 /* ChannelListAPIClient.swift in Sources */,
 				887DEA882388BBF900B422F2 /* AppDelegate.swift in Sources */,
 				887DEAC72388C19200B422F2 /* Dictionary+JSON.swift in Sources */,
+				887DEAF62389172100B422F2 /* NetWork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
