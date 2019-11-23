@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qVr-4p-Kdb">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Youtube Viwer-->
+        <scene sceneID="Vog-2w-kPA">
+            <objects>
+                <viewController storyboardIdentifier="VideoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="99T-qe-7dQ" customClass="VideoListViewController" customModule="STVTest201911" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7S-Zq-sNA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LS-aZ-1dQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoListTableViewCell" rowHeight="154" id="bgS-Xe-eZu" customClass="VideoListTableViewCell" customModule="STVTest201911" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgS-Xe-eZu" id="XmF-l8-Btp" customClass="MovieListCellTableViewCell" customModule="STVTest201911" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5LS-aZ-1dQ" firstAttribute="top" secondItem="l7Q-XJ-G5X" secondAttribute="top" id="4ST-zK-vKl"/>
+                            <constraint firstAttribute="bottom" secondItem="5LS-aZ-1dQ" secondAttribute="bottom" id="hoj-wR-WTC"/>
+                            <constraint firstItem="5LS-aZ-1dQ" firstAttribute="trailing" secondItem="l7Q-XJ-G5X" secondAttribute="trailing" id="nb1-h5-qQz"/>
+                            <constraint firstItem="5LS-aZ-1dQ" firstAttribute="leading" secondItem="l7Q-XJ-G5X" secondAttribute="leading" id="vXn-Ub-PMR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l7Q-XJ-G5X"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Youtube Viwer" id="LJe-eZ-AOG"/>
+                    <connections>
+                        <outlet property="videoListTableView" destination="5LS-aZ-1dQ" id="VD3-3e-BoJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyc-uw-Ng5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2500" y="104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2s0-zI-Csd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qVr-4p-Kdb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zsm-wu-n4e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="99T-qe-7dQ" kind="relationship" relationship="rootViewController" id="nJs-OM-6hr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ek-aQ-xIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="104"/>
+        </scene>
+    </scenes>
+</document>

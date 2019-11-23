@@ -7,6 +7,22 @@
 //
 
 import UIKit
+import XCGLogger
+
+let log: XCGLogger? = {
+    #if DEBUG
+    let log = XCGLogger.default
+    log.setup(level: .debug,
+              showThreadName: true,
+              showLevel: true,
+              showFileNames: true,
+              showLineNumbers: true,
+              writeToFile: nil)
+    return log
+    #else
+    return nil
+    #endif
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		887DEA882388BBF900B422F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEA872388BBF900B422F2 /* AppDelegate.swift */; };
-		887DEA8A2388BBF900B422F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEA892388BBF900B422F2 /* ViewController.swift */; };
-		887DEA8D2388BBF900B422F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887DEA8B2388BBF900B422F2 /* Main.storyboard */; };
 		887DEA8F2388BBFA00B422F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887DEA8E2388BBFA00B422F2 /* Assets.xcassets */; };
 		887DEA922388BBFA00B422F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887DEA902388BBFA00B422F2 /* LaunchScreen.storyboard */; };
 		887DEA9D2388BBFA00B422F2 /* STVTest201911Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEA9C2388BBFA00B422F2 /* STVTest201911Tests.swift */; };
 		887DEAA82388BBFA00B422F2 /* STVTest201911UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAA72388BBFA00B422F2 /* STVTest201911UITests.swift */; };
+		887DEAB82388BEB500B422F2 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DEAB72388BEB500B422F2 /* XCGLogger.framework */; };
+		887DEABA2388BEC500B422F2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DEAB92388BEC500B422F2 /* RealmSwift.framework */; };
+		887DEABC2388BED800B422F2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DEABB2388BED800B422F2 /* Realm.framework */; };
+		887DEABE2388BEE300B422F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887DEABD2388BEE300B422F2 /* Alamofire.framework */; };
+		887DEAC02388BF5800B422F2 /* VideoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887DEABF2388BF5800B422F2 /* VideoListViewController.storyboard */; };
+		887DEAC22388BFEE00B422F2 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAC12388BFEE00B422F2 /* VideoListViewController.swift */; };
+		887DEAC52388C12C00B422F2 /* VideoListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAC42388C12C00B422F2 /* VideoListAPIClient.swift */; };
+		887DEAC72388C19200B422F2 /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAC62388C19200B422F2 /* Dictionary+JSON.swift */; };
+		887DEAC92388C21500B422F2 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAC82388C21500B422F2 /* VideoList.swift */; };
+		887DEACE2388C53700B422F2 /* VideoListDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEACD2388C53700B422F2 /* VideoListDao.swift */; };
+		887DEAD22388C71E00B422F2 /* VideoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAD02388C71E00B422F2 /* VideoListTableViewCell.swift */; };
+		887DEAD32388C71E00B422F2 /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAD12388C71E00B422F2 /* VideoListTableViewCell.xib */; };
+		887DEAD52388C82E00B422F2 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */; };
+		887DEAD82388CB2D00B422F2 /* NoVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAD62388CB2D00B422F2 /* NoVideoTableViewCell.swift */; };
+		887DEAD92388CB2D00B422F2 /* NoVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +49,6 @@
 /* Begin PBXFileReference section */
 		887DEA842388BBF900B422F2 /* STVTest201911.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STVTest201911.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887DEA872388BBF900B422F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		887DEA892388BBF900B422F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		887DEA8C2388BBF900B422F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		887DEA8E2388BBFA00B422F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		887DEA912388BBFA00B422F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		887DEA932388BBFA00B422F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +58,21 @@
 		887DEAA32388BBFA00B422F2 /* STVTest201911UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVTest201911UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		887DEAA72388BBFA00B422F2 /* STVTest201911UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVTest201911UITests.swift; sourceTree = "<group>"; };
 		887DEAA92388BBFA00B422F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887DEAB72388BEB500B422F2 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		887DEAB92388BEC500B422F2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		887DEABB2388BED800B422F2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		887DEABD2388BEE300B422F2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		887DEABF2388BF5800B422F2 /* VideoListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoListViewController.storyboard; sourceTree = "<group>"; };
+		887DEAC12388BFEE00B422F2 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		887DEAC42388C12C00B422F2 /* VideoListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListAPIClient.swift; sourceTree = "<group>"; };
+		887DEAC62388C19200B422F2 /* Dictionary+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+JSON.swift"; sourceTree = "<group>"; };
+		887DEAC82388C21500B422F2 /* VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
+		887DEACD2388C53700B422F2 /* VideoListDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListDao.swift; sourceTree = "<group>"; };
+		887DEAD02388C71E00B422F2 /* VideoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListTableViewCell.swift; sourceTree = "<group>"; };
+		887DEAD12388C71E00B422F2 /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
+		887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		887DEAD62388CB2D00B422F2 /* NoVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoVideoTableViewCell.swift; sourceTree = "<group>"; };
+		887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoVideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887DEABE2388BEE300B422F2 /* Alamofire.framework in Frameworks */,
+				887DEABC2388BED800B422F2 /* Realm.framework in Frameworks */,
+				887DEABA2388BEC500B422F2 /* RealmSwift.framework in Frameworks */,
+				887DEAB82388BEB500B422F2 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +111,7 @@
 				887DEA9B2388BBFA00B422F2 /* STVTest201911Tests */,
 				887DEAA62388BBFA00B422F2 /* STVTest201911UITests */,
 				887DEA852388BBF900B422F2 /* Products */,
+				887DEAB62388BEB500B422F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +128,11 @@
 		887DEA862388BBF900B422F2 /* STVTest201911 */ = {
 			isa = PBXGroup;
 			children = (
+				887DEACC2388C24600B422F2 /* Controller */,
+				887DEACA2388C22400B422F2 /* Model */,
+				887DEAC62388C19200B422F2 /* Dictionary+JSON.swift */,
+				887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */,
 				887DEA872388BBF900B422F2 /* AppDelegate.swift */,
-				887DEA892388BBF900B422F2 /* ViewController.swift */,
-				887DEA8B2388BBF900B422F2 /* Main.storyboard */,
 				887DEA8E2388BBFA00B422F2 /* Assets.xcassets */,
 				887DEA902388BBFA00B422F2 /* LaunchScreen.storyboard */,
 				887DEA932388BBFA00B422F2 /* Info.plist */,
@@ -125,6 +158,64 @@
 			path = STVTest201911UITests;
 			sourceTree = "<group>";
 		};
+		887DEAB62388BEB500B422F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				887DEABD2388BEE300B422F2 /* Alamofire.framework */,
+				887DEABB2388BED800B422F2 /* Realm.framework */,
+				887DEAB92388BEC500B422F2 /* RealmSwift.framework */,
+				887DEAB72388BEB500B422F2 /* XCGLogger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		887DEAC32388C03000B422F2 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAC12388BFEE00B422F2 /* VideoListViewController.swift */,
+				887DEABF2388BF5800B422F2 /* VideoListViewController.storyboard */,
+				887DEACF2388C6FD00B422F2 /* VideoListTableCell */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		887DEACA2388C22400B422F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				887DEACB2388C23700B422F2 /* VideoList */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		887DEACB2388C23700B422F2 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAC82388C21500B422F2 /* VideoList.swift */,
+				887DEAC42388C12C00B422F2 /* VideoListAPIClient.swift */,
+				887DEACD2388C53700B422F2 /* VideoListDao.swift */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		887DEACC2388C24600B422F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAC32388C03000B422F2 /* VideoList */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		887DEACF2388C6FD00B422F2 /* VideoListTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAD02388C71E00B422F2 /* VideoListTableViewCell.swift */,
+				887DEAD12388C71E00B422F2 /* VideoListTableViewCell.xib */,
+				887DEAD62388CB2D00B422F2 /* NoVideoTableViewCell.swift */,
+				887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */,
+			);
+			path = VideoListTableCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +226,7 @@
 				887DEA802388BBF900B422F2 /* Sources */,
 				887DEA812388BBF900B422F2 /* Frameworks */,
 				887DEA822388BBF900B422F2 /* Resources */,
+				887DEAB52388BDDB00B422F2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,7 +323,9 @@
 			files = (
 				887DEA922388BBFA00B422F2 /* LaunchScreen.storyboard in Resources */,
 				887DEA8F2388BBFA00B422F2 /* Assets.xcassets in Resources */,
-				887DEA8D2388BBF900B422F2 /* Main.storyboard in Resources */,
+				887DEAD32388C71E00B422F2 /* VideoListTableViewCell.xib in Resources */,
+				887DEAD92388CB2D00B422F2 /* NoVideoTableViewCell.xib in Resources */,
+				887DEAC02388BF5800B422F2 /* VideoListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +345,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		887DEAB52388BDDB00B422F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		887DEA802388BBF900B422F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887DEA8A2388BBF900B422F2 /* ViewController.swift in Sources */,
+				887DEACE2388C53700B422F2 /* VideoListDao.swift in Sources */,
+				887DEAC92388C21500B422F2 /* VideoList.swift in Sources */,
+				887DEAD82388CB2D00B422F2 /* NoVideoTableViewCell.swift in Sources */,
+				887DEAC52388C12C00B422F2 /* VideoListAPIClient.swift in Sources */,
+				887DEAD22388C71E00B422F2 /* VideoListTableViewCell.swift in Sources */,
+				887DEAD52388C82E00B422F2 /* UIImageView+Download.swift in Sources */,
+				887DEAC22388BFEE00B422F2 /* VideoListViewController.swift in Sources */,
 				887DEA882388BBF900B422F2 /* AppDelegate.swift in Sources */,
+				887DEAC72388C19200B422F2 /* Dictionary+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +419,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		887DEA8B2388BBF900B422F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				887DEA8C2388BBF900B422F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		887DEA902388BBFA00B422F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,6 +552,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL5QXDL3YG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = STVTest201911/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +574,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL5QXDL3YG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = STVTest201911/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
