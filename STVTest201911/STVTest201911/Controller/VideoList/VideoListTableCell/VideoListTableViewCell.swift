@@ -26,8 +26,17 @@ class VideoListTableViewCell: UITableViewCell {
     
     func setLayout(data: VideoListData) {
         thumbnailImageView.dowloadFromServer(link: data.imageUrl)
+        iconImageView.layer.cornerRadius = iconImageView.frame.size.width * 0.5
+        imageView?.clipsToBounds = true
         iconImageView.dowloadFromServer(link: data.profileImageUrl)
         titleLabel.text = data.name
+        
+        let viewsStr = String(data.numberOfViews)
+        if viewsStr.count > 3 {
+            let partString = viewsStr[viewsStr.index(viewsStr.startIndex, offsetBy: 0)..<viewsStr.index(viewsStr.startIndex, offsetBy: viewsStr.count - 3)] + "K"
+            movieStatusView.text = "\(data.channelName)  ・ " + partString
+            return
+        }
         movieStatusView.text = "\(data.channelName)  ・  \(data.numberOfViews)"
     }
 }

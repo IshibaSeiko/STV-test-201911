@@ -42,7 +42,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l7Q-XJ-G5X"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Youtube Viwer" id="LJe-eZ-AOG"/>
+                    <navigationItem key="navigationItem" title="Youtube Viwer" leftItemsSupplementBackButton="YES" id="LJe-eZ-AOG"/>
                     <connections>
                         <outlet property="videoListTableView" destination="5LS-aZ-1dQ" id="VD3-3e-BoJ"/>
                     </connections>
@@ -59,6 +59,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zsm-wu-n4e">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

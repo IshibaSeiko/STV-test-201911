@@ -11,14 +11,24 @@ import UIKit
 class VideoListViewController: UIViewController {
     
     let movieListEndPoint = "/videos"
+    let channelListEndPoint = "/channels"
 
     @IBOutlet weak var videoListTableView: UITableView!
     let videoList = VideoListDao()
-    var VideoListDBData: [VideoListData] = []
+    let channelList = ChannelListDao()
+    
+    var videoListDBData: [VideoListData] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        navigationController?.navigationItem.title = "Youtube Viewer"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     func setUp() {
@@ -50,27 +60,63 @@ class VideoListViewController: UIViewController {
     }
     
     func reloadListData() {
-        VideoListDBData = Array(videoList.findAll())
+        videoListDBData = Array(videoList.findAll())
         videoListTableView.reloadData()
     }
 }
 
-extension VideoListViewController: UITableViewDelegate {
+extension VideoListViewController {
+    func decodeChannelList(data: Data) {
+        let decoder = JSONDecoder()
+        guard let decodeData = try? decoder.decode(ChannelList.self, from: data) else {
+            return
+        }
+        
+        channelList.deleteAll()
+        channelList.add(objects: setChannelListDataFromAPI(data: decodeData))
+    }
+}
 
+
+extension VideoListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if videoListDBData.count == 0 {
+            return
+        }
+        
+        let apiClient = ChannelListAPIClient()
+        apiClient.fetchChannelList(endPoint: channelListEndPoint, parameter: videoListDBData[indexPath.row].id) { (result) in
+            switch result  {
+            case .success(let data):
+                self.decodeChannelList(data: data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "ChannelListViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ChannelListViewController") as? ChannelListViewController else {
+            return
+        }
+        vc.channelListDBData = Array(channelList.findAll())
+        vc.navigationTitle = videoListDBData[indexPath.row].name
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension VideoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if VideoListDBData.count < 1 {
+        if videoListDBData.count < 1 {
             return 1
         } else {
-            return VideoListDBData.count
+            return videoListDBData.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if VideoListDBData.count < 1 {
+        if videoListDBData.count < 1 {
             tableView.register(UINib(nibName: "NoVideoTableViewCell", bundle: nil), forCellReuseIdentifier: "NoVideoTableViewCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoVideoTableViewCell", for: indexPath)
             return cell
@@ -81,7 +127,7 @@ extension VideoListViewController: UITableViewDataSource {
         guard let movieListCell = cell as? VideoListTableViewCell else {
             return cell
         }
-        movieListCell.setLayout(data: VideoListDBData[indexPath.row])
+        movieListCell.setLayout(data: videoListDBData[indexPath.row])
         return movieListCell
     }
 }

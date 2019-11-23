@@ -27,6 +27,13 @@
 		887DEAD52388C82E00B422F2 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */; };
 		887DEAD82388CB2D00B422F2 /* NoVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAD62388CB2D00B422F2 /* NoVideoTableViewCell.swift */; };
 		887DEAD92388CB2D00B422F2 /* NoVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */; };
+		887DEADB2388CED300B422F2 /* ChannelListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEADA2388CED300B422F2 /* ChannelListAPIClient.swift */; };
+		887DEADE2388CF2D00B422F2 /* ChannelListDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEADD2388CF2D00B422F2 /* ChannelListDao.swift */; };
+		887DEAE02388CF7700B422F2 /* ChannelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEADF2388CF7700B422F2 /* ChannelList.swift */; };
+		887DEAE52388D01B00B422F2 /* ChannelListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAE42388D01B00B422F2 /* ChannelListViewController.storyboard */; };
+		887DEAE72388D07300B422F2 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAE62388D07300B422F2 /* ChannelListViewController.swift */; };
+		887DEAEB2388D0DF00B422F2 /* ChannelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DEAE92388D0DF00B422F2 /* ChannelListTableViewCell.swift */; };
+		887DEAEC2388D0DF00B422F2 /* ChannelListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		887DEAD42388C82E00B422F2 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		887DEAD62388CB2D00B422F2 /* NoVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoVideoTableViewCell.swift; sourceTree = "<group>"; };
 		887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoVideoTableViewCell.xib; sourceTree = "<group>"; };
+		887DEADA2388CED300B422F2 /* ChannelListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelListAPIClient.swift; path = STVTest201911/Model/ChannelList/ChannelListAPIClient.swift; sourceTree = SOURCE_ROOT; };
+		887DEADD2388CF2D00B422F2 /* ChannelListDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListDao.swift; sourceTree = "<group>"; };
+		887DEADF2388CF7700B422F2 /* ChannelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelList.swift; sourceTree = "<group>"; };
+		887DEAE42388D01B00B422F2 /* ChannelListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChannelListViewController.storyboard; sourceTree = "<group>"; };
+		887DEAE62388D07300B422F2 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		887DEAE92388D0DF00B422F2 /* ChannelListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListTableViewCell.swift; sourceTree = "<group>"; };
+		887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +196,7 @@
 		887DEACA2388C22400B422F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				887DEADC2388CEDD00B422F2 /* ChannelList */,
 				887DEACB2388C23700B422F2 /* VideoList */,
 			);
 			path = Model;
@@ -200,6 +215,7 @@
 		887DEACC2388C24600B422F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				887DEAE12388CFDE00B422F2 /* ChannelList */,
 				887DEAC32388C03000B422F2 /* VideoList */,
 			);
 			path = Controller;
@@ -214,6 +230,35 @@
 				887DEAD72388CB2D00B422F2 /* NoVideoTableViewCell.xib */,
 			);
 			path = VideoListTableCell;
+			sourceTree = "<group>";
+		};
+		887DEADC2388CEDD00B422F2 /* ChannelList */ = {
+			isa = PBXGroup;
+			children = (
+				887DEADA2388CED300B422F2 /* ChannelListAPIClient.swift */,
+				887DEADD2388CF2D00B422F2 /* ChannelListDao.swift */,
+				887DEADF2388CF7700B422F2 /* ChannelList.swift */,
+			);
+			path = ChannelList;
+			sourceTree = "<group>";
+		};
+		887DEAE12388CFDE00B422F2 /* ChannelList */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAE62388D07300B422F2 /* ChannelListViewController.swift */,
+				887DEAE42388D01B00B422F2 /* ChannelListViewController.storyboard */,
+				887DEAE82388D0AD00B422F2 /* ChannelListTableCell */,
+			);
+			path = ChannelList;
+			sourceTree = "<group>";
+		};
+		887DEAE82388D0AD00B422F2 /* ChannelListTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				887DEAE92388D0DF00B422F2 /* ChannelListTableViewCell.swift */,
+				887DEAEA2388D0DF00B422F2 /* ChannelListTableViewCell.xib */,
+			);
+			path = ChannelListTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,8 +369,10 @@
 				887DEA922388BBFA00B422F2 /* LaunchScreen.storyboard in Resources */,
 				887DEA8F2388BBFA00B422F2 /* Assets.xcassets in Resources */,
 				887DEAD32388C71E00B422F2 /* VideoListTableViewCell.xib in Resources */,
+				887DEAE52388D01B00B422F2 /* ChannelListViewController.storyboard in Resources */,
 				887DEAD92388CB2D00B422F2 /* NoVideoTableViewCell.xib in Resources */,
 				887DEAC02388BF5800B422F2 /* VideoListViewController.storyboard in Resources */,
+				887DEAEC2388D0DF00B422F2 /* ChannelListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887DEAE72388D07300B422F2 /* ChannelListViewController.swift in Sources */,
+				887DEAEB2388D0DF00B422F2 /* ChannelListTableViewCell.swift in Sources */,
 				887DEACE2388C53700B422F2 /* VideoListDao.swift in Sources */,
 				887DEAC92388C21500B422F2 /* VideoList.swift in Sources */,
 				887DEAD82388CB2D00B422F2 /* NoVideoTableViewCell.swift in Sources */,
 				887DEAC52388C12C00B422F2 /* VideoListAPIClient.swift in Sources */,
 				887DEAD22388C71E00B422F2 /* VideoListTableViewCell.swift in Sources */,
+				887DEAE02388CF7700B422F2 /* ChannelList.swift in Sources */,
+				887DEADE2388CF2D00B422F2 /* ChannelListDao.swift in Sources */,
 				887DEAD52388C82E00B422F2 /* UIImageView+Download.swift in Sources */,
 				887DEAC22388BFEE00B422F2 /* VideoListViewController.swift in Sources */,
+				887DEADB2388CED300B422F2 /* ChannelListAPIClient.swift in Sources */,
 				887DEA882388BBF900B422F2 /* AppDelegate.swift in Sources */,
 				887DEAC72388C19200B422F2 /* Dictionary+JSON.swift in Sources */,
 			);
