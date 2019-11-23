@@ -46,6 +46,10 @@ extension ChannelListViewController {
 extension ChannelListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if !Network.isOnline() {
+            return
+        }
+        
         guard let data = channelListDBData,
             let url = URL(string: data[indexPath.row].link) else {
             return

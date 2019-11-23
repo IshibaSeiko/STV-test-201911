@@ -28,11 +28,6 @@ class VideoListViewController: UIViewController {
         self.setUp()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        indicatorOFF()
-    }
-    
     func setUp() {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
@@ -77,6 +72,7 @@ class VideoListViewController: UIViewController {
     func reloadListData() {
         videoListDBData = Array(videoList.findAll())
         videoListTableView.reloadData()
+        self.indicatorOFF()
     }
 }
 
