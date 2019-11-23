@@ -37,7 +37,12 @@ class VideoListViewController: UIViewController {
         
         view.addSubview(activityIndicatorView)
         if Network.isOnline() {
-            indicatorON()
+            let workItem = DispatchWorkItem {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.activityIndicatorView.startAnimating()
+                }
+            }
+
             let apiClient = APIClient()
             apiClient.fetchVideoList(endPoint: movieListEndPoint) { (result) in
                 
@@ -47,8 +52,10 @@ class VideoListViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 }
-                
-                self.indicatorOFF()
+                workItem.cancel()
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                }
             }
         } else {
             print("isOffline")
@@ -72,7 +79,6 @@ class VideoListViewController: UIViewController {
     func reloadListData() {
         videoListDBData = Array(videoList.findAll())
         videoListTableView.reloadData()
-        self.indicatorOFF()
     }
 }
 
@@ -88,20 +94,6 @@ extension VideoListViewController {
     }
 }
 
-extension VideoListViewController {
-    func indicatorON(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.activityIndicatorView.startAnimating()
-        }
-    }
-    
-    func indicatorOFF() {
-        DispatchQueue.main.async {
-            self.activityIndicatorView.stopAnimating()
-        }
-    }
-}
-
 extension VideoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -110,7 +102,11 @@ extension VideoListViewController: UITableViewDelegate {
         }
         
         if Network.isOnline() {
-            indicatorON()
+            let workItem = DispatchWorkItem {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.activityIndicatorView.startAnimating()
+                }
+            }
             let apiClient = ChannelListAPIClient()
             apiClient.fetchChannelList(endPoint: channelListEndPoint, parameter: videoListDBData[indexPath.row].id) { (result) in
                 switch result  {
@@ -119,7 +115,10 @@ extension VideoListViewController: UITableViewDelegate {
                 case .failure(let error):
                     print(error)
                 }
-                self.indicatorOFF()
+                workItem.cancel()
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                }
             }
         } else {
             print("isOffline")
@@ -132,7 +131,6 @@ extension VideoListViewController: UITableViewDelegate {
         vc.channelListDBData = Array(channelList.findAll())
         vc.navigationTitle = videoListDBData[indexPath.row].name
         self.navigationController?.pushViewController(vc, animated: true)
-        indicatorOFF()
     }
 }
 
